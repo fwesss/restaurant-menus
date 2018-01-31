@@ -1,0 +1,20 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Edit Menu Item</title>
+	<meta name="description" content="Edit a menu item">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}" media="all">
+</head>
+<body>
+    <h1 class="page-title"> Edit Menu Item </h1>
+    <form action="{{url_for('editMenuItem', restaurant_id = restaurant_id, menu_id = item.id)}}" method='POST'>
+        <p>Name:</p>
+        <input type='text' size='30' name='name' placeholder="{{item.name}}">
+        <input type='submit' value='Edit'>
+    </form>
+    <a href="{{url_for('restaurantMenu', restaurant_id = item.restaurant_id)}}">Cancel</a>
+</body>
+
+</html>
